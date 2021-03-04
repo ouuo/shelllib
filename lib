@@ -1,0 +1,35 @@
+function colormsg(){
+    # 输出彩色字体
+    # 使用方式 colormsg green "This is green!"
+
+
+    #fonts color
+    Green="\033[32m"
+    Red="\033[31m"
+    Blue="\033[34m"
+    # Yellow="\033[33m"
+    GreenBG="\033[42;37m"
+    RedBG="\033[41;37m"
+    Font="\033[0m"
+
+    #notification information
+    # Info="${Green}[信息]${Font}"
+    OK="${Green}[OK]${Font}"
+    Error="${Red}[错误]${Font}"
+
+
+
+    if [[ $1 == "red" ]];then
+        echo -e "\033[31m $2 \033[0m"
+    elif [[ $1 == "green" ]];then
+        echo -e "\033[32m $2 \033[0m"
+    elif [[ $1 == "yellow" ]];then
+        echo -e "\033[33m $2 \033[0m"
+    elif [[ $1 == "blue" ]];then
+        echo -e "\033[34m $2 \033[0m"
+    elif [[ $1 == "greenbg" ]];then
+        echo -e "${GreenBG} $2 ${Font}"
+    elif [[ $1 == "redbg" ]];then
+        echo -e "${RedBG} $2 ${Font}"
+    fi
+}
